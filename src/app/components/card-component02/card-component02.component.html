@@ -1,0 +1,16 @@
+<div class="card border-success">
+    <div class="card-header fs-2 fw-bold bg-transparent border-success">{{employee.name}}</div>
+    <div class="card-body">
+      <h5 class="card-title">
+        Email: {{employee.email}}
+      </h5>
+      <p class="card-text">
+        <span class="fw-bold fst-italic mt-2" *ngFor="let skills of employee.skills">
+            {{skills.skill}}
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{skills.exp/10*100}}%" attr.aria-valuenow="{{skills.exp}}" aria-valuemin="0" aria-valuemax="10"></div>
+            </div>
+        </span>      
+    </p>
+    </div>
+</div>
