@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+// -------------Owl Carousel--------------
+import { OwlOptions } from 'ngx-owl-carousel-o';
+// ---------------------------------------
 
 @Component({
   selector: 'app-root',
@@ -75,6 +78,50 @@ export class AppComponent {
       ],
     },
   ]
+  
+// -------------Owl Carousel--------------
+  customOptions: OwlOptions = {
+    loop: false,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 3
+      }
+    },
+    nav: false,
+    // stagePadding: 110,
+    // center: true,
+    // autoWidth: true,
+    // margin: 0,
+    // autoplay: true,
+  }
+
+  changeOptions: OwlOptions = {
+    ...this.customOptions,
+    responsive: {
+      0: {
+        items: 1
+      },
+      940: {
+        items: 2
+      }
+    }
+  }
+// ----------------------------
 }
 
 class Movie{
