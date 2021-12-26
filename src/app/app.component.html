@@ -1,14 +1,45 @@
 <div class="container">
   <header class="text-center fs-1 fw-bold">Movie Card</header>
+  
+  <!-- Normal View -->
   <div class="row row-cols-1 row-cols-md-2 g-4 justify-contain-center py-4">
     <div class="col" *ngFor="let movie of movies">
       <app-card-component01 [movie]="movie"></app-card-component01>
     </div>
   </div>
+  
+  <!-- Owl Carousel View -->
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let movie of movies; let index = index">
+          <ng-template carouselSlide [id]="'index'">
+            <app-card-component01 [movie]="movie"></app-card-component01>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+  </div>
+  
+  
   <header class="text-center fs-1 fw-bold mt-4">Employee's Card</header>
+  <!-- Normal View -->
   <div class="row row-cols-1 row-cols-md-2 g-4">
     <div class="col" *ngFor="let emp of employees">
       <app-card-component02 [employee]="emp"></app-card-component02>
+    </div>
+  </div>
+  
+  <!-- Owl Carousel View -->
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <owl-carousel-o [options]="changeOptions">
+        <ng-container *ngFor="let emp of employees">
+          <ng-template carouselSlide>
+            <app-card-component02 [employee]="emp"></app-card-component02>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
     </div>
   </div>
 </div>
