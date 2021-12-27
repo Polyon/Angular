@@ -9,7 +9,7 @@ export class CardComponent01Component implements OnInit {
 
   constructor() { }
 
-  @Input() movie : any;
+  @Input() movie : any | undefined;
 
   ngOnInit(): void {
   }
